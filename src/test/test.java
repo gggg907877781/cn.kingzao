@@ -6,12 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
+
 
 public class test {
 	
@@ -93,7 +96,9 @@ public class test {
 	
 	@Test
 	public void test2 () throws Exception {
-		
+		ArrayList list = new ArrayList();
+		list.add(1);
+		System.out.println(Arrays.toString(list.toArray()));
 	}
 
 }
