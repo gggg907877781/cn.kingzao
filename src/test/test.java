@@ -1,5 +1,5 @@
 package test;
-
+//ss
 import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -165,6 +165,7 @@ public class test {
 		Class.forName("org.postgresql.Driver");
 		ccn = DriverManager.getConnection("jdbc:postgresql://192.168.6.100:5432/postgres", "postgres","postgres");
 		st  = ccn.createStatement();
+		
 	}
 	
 	public void  stopClose() throws SQLException {
