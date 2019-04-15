@@ -1,6 +1,12 @@
 package test;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.lang.reflect.WildcardType;
+
 import org.junit.Test;
 
 import com.jfinal.config.Constants;
@@ -18,8 +24,21 @@ public class JDBC  {
 	
 	@Test
 	public  void main () {
-		Prop useTb = PropKit.use("tb.properties");
-		DruidPlugin db = new DruidPlugin(useTb.get("connection.url"),useTb.get("connection.username"),useTb.get("connection.password"));
-		System.err.println(db);
+		PropKit.use("tb.properties");
+		DruidPlugin dp = new DruidPlugin(PropKit.get("connection.url"), PropKit.get("connection.username"),
+				PropKit.get("connection.password"));
+		dp.setDriverClass("org.postgresql.Driver");
 	}
+	
+	@Test
+	public void test1 () throws IOException {
+		
+		RandomAccessFile  random = new RandomAccessFile ("tb.properties","rw");
+		int a = -1;
+		while ((a=random.read())!=-1) {
+			System.out.println(a);
+		}
+		
+	}
+	
 }
