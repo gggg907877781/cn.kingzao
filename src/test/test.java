@@ -65,12 +65,10 @@ public class test {
 				if (idLength != "") {
 					orgaAll.clear();
 					exeSql = st1.executeQuery("select id,orga_alias from oc_orga_dimension where length(id) = "+idLength+" and id != 'ONE_000' and orga_type != 3");
-					if (exeSql.next()) {
 						while(exeSql.next()) {
 							orgaAll.add(exeSql.getString(1));
 							corresponding.put(exeSql.getString(1),exeSql.getString(2));
 						}
-					}
 				}
 				
 				stopClose1();
@@ -79,6 +77,7 @@ public class test {
 				ResultSet index = st.executeQuery("select b.orga_alias,a.orga_id,a.stat_date,a.this_period_value,a.same_period_value,a.data_source,a.update_time from "+rs.getString(6) + " a join oc_orga_dimension b on a.orga_id = b.id  where stat_date like '"+timeYear+"%'");
 				int zeroHour;
 				if (index.next()) {
+					System.out.println(rs.getString(1)+rs.getString(7));
 					zeroHour = 0;
 					++zeroHour;
 					if (zeroHour == 1 && index.getString(6) == "2") {
@@ -261,6 +260,16 @@ public class test {
 			ccn1.close();
 		}
 
+	}
+	
+	@Test
+	public void teset23 () throws Exception {
+		
+		returnData();
+		ResultSet a = st.executeQuery("select * from oc_fixed_assets_invest_society");
+		
+		System.out.println(a.next());
+		
 	}
 	
 	

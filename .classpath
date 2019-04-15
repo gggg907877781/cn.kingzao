@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="postgresql-9.2-1002.jdbc4.jar"/>
+	<classpathentry kind="lib" path="jfinal-3.0-bin-with-src.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
